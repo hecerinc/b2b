@@ -1,0 +1,115 @@
+@charset "utf-8";
+@mixin valign-parent{
+	display:table;
+	height: 100%;
+	width: 100%;
+}
+@mixin valign{
+	display:table-cell;
+	vertical-align:middle;
+}
+@mixin transition($prop, $time, $opt: null, $fn: null) {
+	transition: $prop $time $fn $opt;
+	-moz-transition: $prop $time $fn $opt;
+	-webkit-transition: $prop $time $fn $opt;
+	-o-transition: $prop $time $fn $opt;
+}
+@mixin transform($trans) {
+	-webkit-transform: $trans;
+	transform: $trans;
+}
+@mixin bgtrans($color, $alpha){
+	background-color: $color;
+	background-color: rgba($color,$alpha);
+}
+@mixin bgsize($size){
+	-webkit-background-size: $size;
+	-moz-background-size: $size;
+	-o-background-size: $size;
+	-ms-background-size: $size;
+	background-size: $size;
+}
+/* Colors
+-------------------
+*/
+$main: #364760;
+$dkblue: #2A394F;
+$highlight: #fe5d3c;
+$hlblue: #15A4FA;
+$red: #cc2b2b;
+$crimson: #490b0b;
+$text: #738094;
+$ltext: #8C97B2;
+$colors: (
+	black: #000,
+	text: $text,
+	hlblue: $hlblue,
+	dkblue: $dkblue,
+	ltext: $ltext
+);
+// img{max-width: 100%;}
+.valign{@include valign;}
+.va-p{@include valign-parent; }
+.u-fr{float: right;}
+.u-fl{float: left;}
+/* Clears */
+.clear {
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+$i: 5;
+@while $i < 51{
+	.h#{$i}px{ height: $i*1px}
+	$i: $i+5;
+}
+.h60px{ height:60px;   }
+.h80px{ height:80px;   }
+.h100px{ height:100px; }
+.h120px{ height:120px; }
+a, a:hover, a:focus{text-decoration: none; }
+
+/* Fonts */
+::-webkit-input-placeholder { color: $text; }
+:-moz-placeholder { color: $text; }
+::-moz-placeholder { color: $text; }
+:-ms-input-placeholder { color: $text; }
+p{color: $text; }
+h1, h2, h3, h4, h5, h6{
+	margin: 0;
+}
+.fz12{font-size: 1.2rem;}
+.fz18{font-size: 1.8rem;}
+.fz20{font-size: 2rem;}
+.fsn{font-style: normal;}
+.fw600{font-weight: 600;}
+.fw700{font-weight: 700;}
+strong{font-weight: 600;}
+.mt0{margin-top: 0 !important;}
+/* Colors */
+
+@each $color in $colors{
+	.#{""+nth($color,1)}{
+		color: #{nth($color,2)};
+	}
+	a.#{""+nth($color,1)}:hover{
+		color: darken(nth($color,2),10%);
+	}
+	.bg-#{""+nth($color,1)}{
+		background-color: #{nth($color,2)};
+	}
+	a.bg-#{""+nth($color,1)}, button.bg-#{""+nth($color,1)}{
+		color: white;
+		&:hover{ background-color: darken(nth($color,2),10%); }
+		@include transition(all, 300ms);
+	}
+}
+.tac{text-align: center;}
+.img-bg{
+	@include bgsize(cover);
+	background-repeat: no-repeat;
+	background-position: center top;
+}
