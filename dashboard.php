@@ -2,10 +2,8 @@
 	include 'includes.php';
 	get_header();
 ?>
-<!-- Sidebar -->
-<?php include 'sidebar.php'; ?>
-<!-- Main content starts here -->
 
+<!-- Main content starts here -->
 <div class="col-lg-10 col-md-10 main-content dashboard">
 	<h1 class="u-fl">Dashboard</h1>
 	<p class="u-fr username">H&eacute;ctor Rinc&oacute;n</p>

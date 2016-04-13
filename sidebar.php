@@ -6,13 +6,13 @@
 	<nav class="main-nav">
 		<ul>
 			<li>
-				<a class="active" href="#"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a>
+				<a href="dashboard.php"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a>
 			</li>
 			<li>
-				<a href="#"><i class="fa fa-rocket" aria-hidden="true"></i> Speed checkout</a>
+				<a class="active" href="speedcheckout.php"><i class="fa fa-rocket" aria-hidden="true"></i> Speed checkout</a>
 			</li>
 			<li>
-				<a href="#"><i class="fa fa-th" aria-hidden="true"></i> Productos</a>
+				<a class="" href="products.php"><i class="fa fa-tag" aria-hidden="true"></i> Productos</a>
 			</li>
 			<li>
 				<a href="#"><i class="fa fa-bars" aria-hidden="true"></i> &Oacute;rdenes</a>
