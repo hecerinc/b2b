@@ -1,4 +1,4 @@
-<?php include 'includes.php'; get_header(); ?>
+<?php include 'includes.php'; $tabs[2] = true; get_header(); ?>
 <div class="col-lg-10 col-md-10 main-content products-main">
 	<h1 class="u-fl">Productos</h1>
 	<p class="u-fr username">H&eacute;ctor Rinc&oacute;n</p>
@@ -61,4 +61,17 @@
 	</section>
 	<div class="clear h80px"></div>
 </div>
+<?php $Block->start('bottomScripts'); ?>
+<script>
+	$(function(){
+		$('.product a').click(function(e){
+			e.preventDefault();
+		});
+		$('.tag').click(function(e){
+			e.preventDefault();
+			$(this).remove();
+		});
+	});
+</script>
+<?php $Block->end(); ?>
 <?php get_footer(); ?>

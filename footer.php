@@ -9,6 +9,15 @@
 	<script src="js/jquery.js"></script>
 	<script src="js/draggabilly.pkgd.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script>
+		// $(function(){
+		// 	$(window).resize();
+		// });
+		// $(window).on('resize', function(){
+		// 	var h = $(document).height();
+		// 	$('.main-sidebar').css('height', h+'px');
+		// });
+	</script>
 	<?= $Block->get('bottomScripts'); ?>
 
 </body>

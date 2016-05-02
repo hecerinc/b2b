@@ -2,30 +2,37 @@
 	<div class="logo">
 		<a href="#"><?= file_get_contents('logo.svg') ?></a>
 	</div>
-	<p class="date">23 de junio de 2016</p>
+	<p class="date">13 de abril de 2016</p>
 	<nav class="main-nav">
 		<ul>
 			<li>
-				<a href="dashboard.php"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a>
+				<a class="<?= $tabs[0]?'active':''; ?>" href="dashboard.php">
+					<i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+				</a>
 			</li>
 			<li>
-				<a class="active" href="speedcheckout.php"><i class="fa fa-rocket" aria-hidden="true"></i> Speed checkout</a>
+				<a class="<?= $tabs[1]?'active':''; ?>" href="speedcheckout.php">
+					<i class="fa fa-rocket" aria-hidden="true"></i> Speed checkout
+				</a>
 			</li>
 			<li>
-				<a class="" href="products.php"><i class="fa fa-tag" aria-hidden="true"></i> Productos</a>
+				<a class="<?= $tabs[2]?'active':''; ?>" href="products.php"><i class="fa fa-tag" aria-hidden="true"></i> Productos</a>
 			</li>
 			<li>
-				<a href="#"><i class="fa fa-bars" aria-hidden="true"></i> &Oacute;rdenes</a>
+				<a class="<?= $tabs[3]?'active':''; ?>" href="orders.php"><i class="fa fa-bars" aria-hidden="true"></i> &Oacute;rdenes</a>
 			</li>
 			<li>
-				<a href="#"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a>
+				<a class="<?= $tabs[4]?'active':''; ?>" href="#"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a>
 			</li>
 		</ul>
 	</nav>
 	<hr class="special">
-	<a class="carrito" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i><br /> Carrito (12)</a>
+	<a class="carrito" href="carrito.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><br /> Carrito (12)</a>
 	<hr class="special mt0">
-	<div class="clear h120px"></div>
-	<a href="#" class="logout"><i class="fa fa-power-off fsn" aria-hidden="true"></i>Cerrar sesi&oacute;n</a>
+	<div class="clear"></div>
+	<a href="index.php" class="logout">
+		<i class="fa fa-power-off fsn" aria-hidden="true"></i>
+		Cerrar sesi&oacute;n
+	</a>
 	<div class="clear"></div>
 </aside>

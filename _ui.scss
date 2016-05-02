@@ -37,7 +37,7 @@ $dkblue: #2A394F;
 $highlight: #fe5d3c;
 $hlblue: #15A4FA;
 $red: #cc2b2b;
-$crimson: #490b0b;
+$teal: #1AC897;
 $text: #738094;
 $ltext: #8C97B2;
 $colors: (
@@ -45,7 +45,8 @@ $colors: (
 	text: $text,
 	hlblue: $hlblue,
 	dkblue: $dkblue,
-	ltext: $ltext
+	ltext: $ltext,
+	teal: $teal
 );
 // img{max-width: 100%;}
 .valign{@include valign;}

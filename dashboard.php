@@ -1,5 +1,6 @@
 <?php
 	include 'includes.php';
+	$tabs[0] = true;
 	get_header();
 ?>
 
@@ -20,7 +21,7 @@
 				<a href="#" class="handle"><i class="fa fa-bars"></i></a>
 				<h2>Speed checkout</h2>
 				<div class="clear h20px"></div>
-				<a class="btn bg-hlblue" href="#">Empezar</a>
+				<a class="btn bg-hlblue" href="speedcheckout.php">Empezar</a>
 			</div>
 		</div>
 		<div class="col-md-4 col-lg-4 grid-item">

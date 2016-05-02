@@ -19,5 +19,7 @@ function get_css($css){
 		$cssfiles .= "<link type=\"text/css\" rel=\"stylesheet\" href=\"css/$file_name\" >";
 	return $cssfiles;
 }
+global $tabs;
+$tabs = [false, false, false, false, false];
 
 ?>

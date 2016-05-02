@@ -1,3 +1,4 @@
+<?php global $tabs; ?>
 <!DOCTYPE html>
 <html class="no-js" lang="es">
 <head>

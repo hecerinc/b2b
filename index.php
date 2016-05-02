@@ -9,6 +9,7 @@
 		body{
 			font-family: 'Open Sans', sans-serif;
 		}
+		/* #1ABACE */
 		.logo{
 			width: 80px;
 			margin: 0 auto;
@@ -19,7 +20,7 @@
 			width: 80px;
 		}
 		.logo path{
-			fill: #fe5d3c;
+			fill: #1ABACE;
 		}
 		*{
 			box-sizing: border-box;
@@ -54,7 +55,7 @@
 			color: #fff;
 			border:0 none;
 			border-radius:40px;
-			background-color: #fe5d3c;
+			background-color: #1ABACE;
 			padding:12px 10px;
 			margin-top: 20px;
 		}
@@ -68,7 +69,7 @@
 <body>
 	<div class="container">
 		<a href="#" class="logo"><?= file_get_contents('logo.svg') ?></a>
-		<form action="#" class="login" method="post">
+		<form action="dashboard.php" class="login" method="post">
 			<input autofocus placeholder="Usuario" type="text" name="username" id="username">
 			<input placeholder="Contraseña" type="password" name="pass" id="pass">
 			<input type="submit" value="Iniciar sesi&oacute;n" class="submit">
