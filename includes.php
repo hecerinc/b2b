@@ -1,6 +1,6 @@
 <?php
 require_once 'ViewBlock.php';
-
+global $Block;
 $Block = new ViewBlock();
 function get_header($title = "", $keywords = "", $css = array()){
 	global $bg_color;

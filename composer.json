@@ -1,5 +1,6 @@
 {
     "require": {
-        "nesbot/carbon": "^1.21"
+        "nesbot/carbon": "^1.21",
+        "altorouter/altorouter": "^1.1"
     }
 }

@@ -1,0 +1,19 @@
+#RewriteEngine on
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule . dashboard.php [L]
+
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . index.php [L]
+
+
+#<IfModule mod_rewrite.c>
+#RewriteEngine On
+#RewriteBase /b2b/
+#RewriteRule ^index\.php$ - [L]
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule . /b2b/index.php [L]
+#</IfModule>
+

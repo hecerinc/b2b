@@ -1,5 +1,5 @@
 <?php
-require 'vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 use Carbon\Carbon;
 ?>
@@ -12,23 +12,23 @@ use Carbon\Carbon;
 	<nav class="main-nav">
 		<ul>
 			<li>
-				<a class="<?= $tabs[0]?'active':''; ?>" href="dashboard.php">
+				<a class="<?= $tabs[0]?'active':''; ?>" href="dashboard">
 					<i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
 				</a>
 			</li>
 			<li>
-				<a class="<?= $tabs[1]?'active':''; ?>" href="speedcheckout.php">
+				<a class="<?= $tabs[1]?'active':''; ?>" href="escuelas">
 					<i class="fa fa-institution" aria-hidden="true"></i> Escuelas
 				</a>
 			</li>
 			<li>
-				<a class="<?= $tabs[2]?'active':''; ?>" href="products.php"><i class="fa fa-circle-o-notch" aria-hidden="true"></i> Patrocinadores</a>
+				<a class="<?= $tabs[2]?'active':''; ?>" href="patrocinadores"><i class="fa fa-circle-o-notch" aria-hidden="true"></i> Patrocinadores</a>
 			</li>
 			<li>
-				<a class="<?= $tabs[3]?'active':''; ?>" href="orders.php"><i class="fa fa-group" aria-hidden="true"></i> Nosotros</a>
+				<a class="<?= $tabs[3]?'active':''; ?>" href="nosotros"><i class="fa fa-group" aria-hidden="true"></i> Nosotros</a>
 			</li>
 			<li>
-				<a class="<?= $tabs[4]?'active':''; ?>" href="#"><i class="fa fa-files-o" aria-hidden="true"></i> Recursos</a>
+				<a class="<?= $tabs[4]?'active':''; ?>" href="recursos"><i class="fa fa-files-o" aria-hidden="true"></i> Recursos</a>
 			</li>
 			<li>
 				<a class="<?= $tabs[5]?'active':''; ?>" href="#"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a>

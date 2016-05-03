@@ -1,79 +1,59 @@
+<?php
+
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+require_once 'vendor/autoload.php';
+$router = new AltoRouter();
+$router->setBasePath('/b2b');
+global $Block;
+$router->map( 'GET', '/', function() {
+    require 'login.php';
+});
+$router->map('POST|GET', '/dashboard', function(){
+	require 'dashboard.php';
+});
+$router->map('GET', '/index.php', function(){
+	require 'dashboard.php';
+});
+$router->map('GET', '/patrocinadores', function(){
+	require 'products.php';
+});
+$router->map('GET', '/escuelas', function(){
+	require 'speedcheckout.php';
+});
+$match = $router->match();
+if( $match && is_callable( $match['target'] ) ):
+	call_user_func_array( $match['target'], $match['params'] );
+else :
+	// no route was matched
+	header( $_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Plataforma B2B</title>
+	<title>404 Not Found &laquo; AECNL</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.0.0/normalize.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700' rel='stylesheet' type='text/css'>
 	<style>
 		body{
 			font-family: 'Open Sans', sans-serif;
-		}
-		/* #1ABACE */
-		.logo{
-			width: 80px;
-			margin: 0 auto;
-			display: block;
-			margin-bottom: 60px;
-		}
-		.logo svg{
-			width: 80px;
-		}
-		.logo path{
-			fill: #1ABACE;
-		}
-		*{
-			box-sizing: border-box;
-		}
-		input[type="text"], input[type="password"]{
-			display: block;
-			width: 100%;
-			border:0 none;
-			margin-bottom:35px;
-			border-bottom:1px solid #ddd;
-			padding-bottom: 5px;
-			padding-left:40px;
-			padding-right: 10px;
-			color: #656262;
-		}
-		input[type="text"]:focus, input[type="password"]{
-			outline:none;
-		}
-		#username{
-			background-image:url(user.svg);
-			background-repeat: no-repeat;
-			background-size: 25px 25px;
-
-		}
-		#pass{
-			background-image: url(lock.svg);
-			background-repeat: no-repeat;
-			background-size: 25px 25px;
-		}
-		.submit{
-			width: 100%;
-			color: #fff;
-			border:0 none;
-			border-radius:40px;
-			background-color: #1ABACE;
-			padding:12px 10px;
-			margin-top: 20px;
+			color: #738094;
 		}
 		.container{
-			width: 300px;
+			width: 60%;
 			margin: 0 auto;
-			margin-top: 12%;
+			margin-top: 5%;
+			text-align: center;
 		}
 	</style>
 </head>
 <body>
 	<div class="container">
-		<a href="#" class="logo"><?= file_get_contents('logo.svg') ?></a>
-		<form action="dashboard.php" class="login" method="post">
-			<input autofocus placeholder="Usuario" type="text" name="username" id="username">
-			<input placeholder="Contraseña" type="password" name="pass" id="pass">
-			<input type="submit" value="Iniciar sesi&oacute;n" class="submit">
-		</form>
+		<h1>404 Not Found</h1>
+		<p>The resource you are looking for could not be found. <br>No mistakes, just happy accidents.</p>
 	</div>
 </body>
 </html>
+<?php endif; ?>
