@@ -46,13 +46,15 @@ $colors: (
 	hlblue: $hlblue,
 	dkblue: $dkblue,
 	ltext: $ltext,
-	teal: $teal
+	teal: $teal,
+	red: $red
 );
 // img{max-width: 100%;}
 .valign{@include valign;}
 .va-p{@include valign-parent; }
 .u-fr{float: right;}
 .u-fl{float: left;}
+.white{color: #fff;}
 /* Clears */
 .clear {
 	clear: both;

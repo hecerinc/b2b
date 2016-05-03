@@ -1,6 +1,5 @@
 <?php
 require_once 'vendor/autoload.php';
-
 use Carbon\Carbon;
 ?>
 <aside class="col-lg-2 col-md-2 main-sidebar clearfix">
@@ -31,12 +30,12 @@ use Carbon\Carbon;
 				<a class="<?= $tabs[4]?'active':''; ?>" href="recursos"><i class="fa fa-files-o" aria-hidden="true"></i> Recursos</a>
 			</li>
 			<li>
-				<a class="<?= $tabs[5]?'active':''; ?>" href="#"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a>
+				<a class="<?= $tabs[5]?'active':''; ?>" href="users"><i class="fa fa-cog" aria-hidden="true"></i> Usuarios</a>
 			</li>
 		</ul>
 	</nav>
 	<div class="clear"></div>
-	<a href="index.php" class="logout">
+	<a href="/b2b/" class="logout">
 		<i class="fa fa-power-off fsn" aria-hidden="true"></i>
 		Cerrar sesi&oacute;n
 	</a>

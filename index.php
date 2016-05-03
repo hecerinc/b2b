@@ -21,6 +21,18 @@ $router->map('GET', '/patrocinadores', function(){
 $router->map('GET', '/escuelas', function(){
 	require 'speedcheckout.php';
 });
+$router->map('GET', '/users', function(){
+	require 'carrito.php';
+});
+$router->map('GET', '/addUsers', function(){
+	require 'users.php';
+});
+$router->map('POST', '/addUsers', function(){
+	require 'processUsers.php';
+});
+$router->map('POST', '/delUser', function(){
+	require 'deleteuser.php';
+});
 $match = $router->match();
 if( $match && is_callable( $match['target'] ) ):
 	call_user_func_array( $match['target'], $match['params'] );
