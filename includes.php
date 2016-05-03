@@ -20,6 +20,6 @@ function get_css($css){
 	return $cssfiles;
 }
 global $tabs;
-$tabs = [false, false, false, false, false];
+$tabs = [false, false, false, false, false, false];
 
 ?>

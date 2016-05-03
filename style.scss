@@ -126,7 +126,7 @@ h1, h2, h3, h4, p, a{color: $text;}
 		// margin-right:5%;
 	}
 	.clientlogo img{display: block; margin: 0 auto;}
-	.col-lg-4:nth-child(3n+3) + .col-lg-4{clear:both;}
+	// .col-lg-3:nth-child(4n+0) + .col-lg-3{clear:both;}
 	.map{
 		padding:10% 0 0 0;
 		iframe{height: 300px;}
@@ -141,7 +141,6 @@ h1, h2, h3, h4, p, a{color: $text;}
 		transition: transform 0.2s;
 	}
 	.spchk{
-		text-align: center;
 		a{color: #fff;}
 	}
 	.panel .handle{
@@ -251,7 +250,8 @@ h1, h2, h3, h4, p, a{color: $text;}
 				display: block;
 				margin: 0 auto;
 			}
-			img{width: 30%;}
+			img{width: 100%; padding:25% 0 !important; display: block;}
+			// img{width: 30%;}
 		}
 		a{
 			display: block;
@@ -391,3 +391,29 @@ h1, h2, h3, h4, p, a{color: $text;}
 		tbody tr:last-child td{border-bottom:0 none;}
 	}
 }
+
+// AMSS starts here
+
+.dashboard{
+	.events{
+		h1{
+			text-shadow: none !important;
+		}
+	}
+	.grid-item--width2{
+		width: 50%;
+	}
+	.maestros{
+		svg{
+			width: 40%;
+			path{fill:$text;}
+		}
+		color: $text;
+		h2{margin-bottom: 0; line-height: 60%;}
+		strong{
+			position:relative;
+			top:-20px;
+		}
+	}
+}
+

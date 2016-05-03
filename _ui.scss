@@ -90,6 +90,7 @@ h1, h2, h3, h4, h5, h6{
 .fw700{font-weight: 700;}
 strong{font-weight: 600;}
 .mt0{margin-top: 0 !important;}
+.h1{font-size: 6.5rem !important;}
 /* Colors */
 
 @each $color in $colors{
@@ -109,6 +110,7 @@ strong{font-weight: 600;}
 	}
 }
 .tac{text-align: center;}
+.tal{text-align: left;}
 .img-bg{
 	@include bgsize(cover);
 	background-repeat: no-repeat;

@@ -1,46 +1,52 @@
 <?php include 'includes.php'; $tabs[1] = true; get_header(); ?>
-<div class="col-lg-10 col-md-10 main-content speed-checkout">
-	<h1 class="u-fl">Speed checkout</h1>
+<div class="col-lg-10 col-md-10 main-content speed-checkout order-main">
+	<h1 class="u-fl">Escuelas</h1>
 	<p class="u-fr username">H&eacute;ctor Rinc&oacute;n</p>
-	<div class="clear h40px"></div>
-	<a href="#" class="u-fr btn bg-hlblue empty-table"><i class="fa fa-trash-o"></i> Vaciar</a>
-	<div class="clear"></div>
-	<form action="#" class="capture">
-		<input type="text" placeholder="# SKU &oacute; nombre" name="prodsearch" id="prodsearch">
-		<input type="text" placeholder="Cant." name="cant" id="cant">
-	</form>
-	<div class="clear h100px"></div>
-	<table class="arts">
-		<thead>
-			<tr>
-				<th>#</th>
-				<th>SKU</th>
-				<th>Proveedor</th>
-				<th>Nombre</th>
-				<th>Cantidad</th>
-				<th>Precio</th>
-				<th></th>
-			</tr>
-		</thead>
-		<tbody>
-			<?php for($i = 1; $i<=0;$i++): ?>
-			<tr>
-				<td><?= $i ?></td>
-				<td>17FA</td>
-				<td>Ragasa</td>
-				<td>Nutrioli aceite vegetal 1L</td>
-				<td>400</td>
-				<td>$50.00</td>
-				<td class="actions">
-					<a href="#" class="delete"><i class="fa fa-times"></i></a>
-				</td>
-			</tr>
+	<div class="clear h60px"></div>
+	<div class="pendientes table">
+		<div class="rows">
+			<form action="#" class="search-form u-fl">
+				<input type="text" name="search" id="search" placeholder="Buscar">
+			</form>
+			<div class="u-fr action-btns clearfix">
+				<a href="#" class="u-fl"><i class="fa fa-cog"></i></a>
+				<a href="#" class="u-fl"><i class="fa fa-refresh"></i></a>
+			</div>
+		</div>
+		<div class="clear h20px"></div>
+		<table>
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Nombre</th>
+					<th>Direcci&oacute;n</th>
+					<th>Patrocinador</th>
+					<th>Alumnos</th>
+					<th>Maestros</th>
+					<th>P | S</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+			<?php for($i=1;$i<=15;$i++): ?>
+				<tr>
+					<td><?= $i; ?></td>
+					<td>Justo Sierra</td>
+					<td>Lorem ipsum dolor sit amet.</td>
+					<td>Axtel</td>
+					<td>293</td>
+					<td>10</td>
+					<td>S</td>
+					<td>
+						<a href="#" class="view-more btn bg-hlblue">Ver detalles</a>
+					</td>
+				</tr>
 			<?php endfor; ?>
-		</tbody>
-	</table>
-	<div class="clear h80px"></div>
-	<a href="carrito.php" class="finalize btn bg-teal"><i class="fa fa-check"></i> Finalizar</a>
-	<div class="clear h80px"></div>
+			</tbody>
+		</table>
+
+	</div>
+	<div class="clear h40px"></div>
 </div>
 <?php $Block->start('bottomScripts'); ?>
 <script>

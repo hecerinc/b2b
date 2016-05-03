@@ -1,8 +1,14 @@
+<?php
+require 'vendor/autoload.php';
+
+use Carbon\Carbon;
+?>
 <aside class="col-lg-2 col-md-2 main-sidebar clearfix">
 	<div class="logo">
 		<a href="#"><?= file_get_contents('logo.svg') ?></a>
 	</div>
-	<p class="date">13 de abril de 2016</p>
+	<?php setlocale(LC_TIME, 'es-MX'); ?>
+	<p class="date"><?= Carbon::now()->formatLocalized('%d de %B de %Y'); ?></p>
 	<nav class="main-nav">
 		<ul>
 			<li>
@@ -12,23 +18,23 @@
 			</li>
 			<li>
 				<a class="<?= $tabs[1]?'active':''; ?>" href="speedcheckout.php">
-					<i class="fa fa-rocket" aria-hidden="true"></i> Speed checkout
+					<i class="fa fa-institution" aria-hidden="true"></i> Escuelas
 				</a>
 			</li>
 			<li>
-				<a class="<?= $tabs[2]?'active':''; ?>" href="products.php"><i class="fa fa-tag" aria-hidden="true"></i> Productos</a>
+				<a class="<?= $tabs[2]?'active':''; ?>" href="products.php"><i class="fa fa-circle-o-notch" aria-hidden="true"></i> Patrocinadores</a>
 			</li>
 			<li>
-				<a class="<?= $tabs[3]?'active':''; ?>" href="orders.php"><i class="fa fa-bars" aria-hidden="true"></i> &Oacute;rdenes</a>
+				<a class="<?= $tabs[3]?'active':''; ?>" href="orders.php"><i class="fa fa-group" aria-hidden="true"></i> Nosotros</a>
 			</li>
 			<li>
-				<a class="<?= $tabs[4]?'active':''; ?>" href="#"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a>
+				<a class="<?= $tabs[4]?'active':''; ?>" href="#"><i class="fa fa-files-o" aria-hidden="true"></i> Recursos</a>
+			</li>
+			<li>
+				<a class="<?= $tabs[5]?'active':''; ?>" href="#"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a>
 			</li>
 		</ul>
 	</nav>
-	<hr class="special">
-	<a class="carrito" href="carrito.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><br /> Carrito (12)</a>
-	<hr class="special mt0">
 	<div class="clear"></div>
 	<a href="index.php" class="logout">
 		<i class="fa fa-power-off fsn" aria-hidden="true"></i>
