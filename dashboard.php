@@ -141,7 +141,7 @@
 		  // use element for option
 		  columnWidth: '.grid-sizer',
 		  percentPosition: true
-		})
+		});
 	});
 </script>
 <?php $Block->end(); ?>
