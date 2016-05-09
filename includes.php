@@ -1,10 +1,11 @@
 <?php
 require_once 'ViewBlock.php';
-
+$proveedor = false;
 $Block = new ViewBlock();
 function get_header($title = "", $keywords = "", $css = array()){
 	global $bg_color;
 	global $Block;
+	global $proveedor;
 	include('header.php');
 }
 function get_footer(){

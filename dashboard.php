@@ -6,7 +6,7 @@
 
 <!-- Main content starts here -->
 <div class="col-lg-10 col-md-10 main-content dashboard">
-	<h1 class="u-fl">Dashboard</h1>
+	<h1 class="u-fl">Panel de control</h1>
 	<p class="u-fr username">H&eacute;ctor Rinc&oacute;n</p>
 	<div class="clear h60px"></div>
 	<div class="grid row">
@@ -19,7 +19,7 @@
 		<div class="col-md-4 col-lg-4 grid-item">
 			<div class="box panel spchk">
 				<a href="#" class="handle"><i class="fa fa-bars"></i></a>
-				<h2>Speed checkout</h2>
+				<h2>Pedido express</h2>
 				<div class="clear h20px"></div>
 				<a class="btn bg-hlblue" href="speedcheckout.php">Empezar</a>
 			</div>

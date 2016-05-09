@@ -1,18 +1,23 @@
+<?php
+	require_once 'vendor/autoload.php';
+	use Carbon\Carbon;
+?>
 <aside class="col-lg-2 col-md-2 main-sidebar clearfix">
 	<div class="logo">
-		<a href="#"><?= file_get_contents('logo.svg') ?></a>
+		<a href="dashboardprov.php"><?= file_get_contents('logo.svg') ?></a>
 	</div>
-	<p class="date">13 de abril de 2016</p>
+	<?php setlocale(LC_TIME, 'es-MX'); ?>
+	<p class="date"><?= Carbon::now()->formatLocalized('%d de %B de %Y'); ?></p>
 	<nav class="main-nav">
 		<ul>
 			<li>
 				<a class="<?= $tabs[0]?'active':''; ?>" href="dashboard.php">
-					<i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
+					<i class="fa fa-tachometer" aria-hidden="true"></i> Panel de control
 				</a>
 			</li>
 			<li>
 				<a class="<?= $tabs[1]?'active':''; ?>" href="speedcheckout.php">
-					<i class="fa fa-rocket" aria-hidden="true"></i> Speed checkout
+					<i class="fa fa-rocket" aria-hidden="true"></i> Pedido express
 				</a>
 			</li>
 			<li>
@@ -22,7 +27,7 @@
 				<a class="<?= $tabs[3]?'active':''; ?>" href="orders.php"><i class="fa fa-bars" aria-hidden="true"></i> &Oacute;rdenes</a>
 			</li>
 			<li>
-				<a class="<?= $tabs[4]?'active':''; ?>" href="#"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a>
+				<a class="<?= $tabs[4]?'active':''; ?>" href="#"><i class="fa fa-cog" aria-hidden="true"></i> Configuraci&oacute;n</a>
 			</li>
 		</ul>
 	</nav>

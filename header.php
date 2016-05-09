@@ -1,4 +1,4 @@
-<?php global $tabs; ?>
+<?php global $tabs; global $proveedor;?>
 <!DOCTYPE html>
 <html class="no-js" lang="es">
 <head>
@@ -21,4 +21,9 @@
 	<![endif]-->
 	<div class="container-fluid clearfix" id="main">
 	<!-- Sidebar -->
-	<?php include 'sidebar.php'; ?>
+	<?php
+		if(!$proveedor)
+			include 'sidebar.php';
+		else
+			include 'sidebarprov.php';
+	?>
