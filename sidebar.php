@@ -32,7 +32,7 @@
 		</ul>
 	</nav>
 	<hr class="special">
-	<a class="carrito" href="carrito.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><br /> Carrito (12)</a>
+	<a class="carrito" href="carrito.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><br /> Carrito</a>
 	<hr class="special mt0">
 	<div class="clear"></div>
 	<a href="index.php" class="logout">

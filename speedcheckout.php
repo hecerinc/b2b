@@ -51,6 +51,7 @@
 		},
 	<?php endwhile; ?>
 	];
+	var cart = [];
 	function generateRow(product, quant){
 		intable++;
 		var td = "</td><td>";
@@ -62,6 +63,7 @@
 			e.preventDefault();
 			$(this).parent().parent().remove();
 		});
+		cart.push({'prodid': product.id, 'quant': quant});
 
 	}
 	$(function(){
@@ -84,7 +86,7 @@
 			$('.arts tbody').empty();
 		});
 		$('.finalize').click(function(e){
-			// e.preventDefault();
+			e.preventDefault();
 			if($('.arts tbody').children().length == 0){
 				alert("No hay artículos. Agregue artículos e intente otra vez.")
 				return false;

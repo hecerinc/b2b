@@ -9,7 +9,7 @@
 	<h1 class="u-fl">Productos</h1>
 	<p class="u-fr username">H&eacute;ctor Rinc&oacute;n</p>
 	<div class="clear h60px"></div>
-	<div class="controls clearfix">
+	<div class="controls clearfix hidden">
 		<div class="tags u-fl">
 			<a href="#" class="tag">Nutrioli</a>
 			<a href="#" class="tag">Aceite</a>
@@ -112,7 +112,19 @@
 	function addToCart(id, quant){
 		$.post(window.location.origin+"/b2b/addtocart.php", {prodid: id, quantity: quant}, function(response){
 			console.log(response);
+			var res = $.parseJSON(response);
+			console.log(res);
+			// Success
+			if(res.code == 200){
+				updateCount();
+			}
+			else{
+				swal("Oops...", "Something went wrong!", "error");
+			}
 		});
+	}
+	function updateCount(){
+		console.log("hello world");
 	}
 </script>
 <?php $Block->end(); ?>

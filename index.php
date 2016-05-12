@@ -69,7 +69,7 @@
 <body>
 	<div class="container">
 		<a href="#" class="logo"><?= file_get_contents('logo.svg') ?></a>
-		<form action="dashboard.php" class="login" method="post">
+		<form action="controller.php" class="login" method="post">
 			<input autofocus placeholder="Usuario" type="text" name="username" id="username">
 			<input placeholder="Contraseña" type="password" name="pass" id="pass">
 			<input type="submit" value="Iniciar sesi&oacute;n" class="submit">

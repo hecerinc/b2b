@@ -6,6 +6,12 @@
 			- Torton
 			- Camioneta
 	*/
+
+	require_once 'conex.php';
+	$link = Conectarse();
+	$query = "SELECT * FROM orders WHERE orders.status = 1";
+	$result = mysqli_query($link, $query) or die(mysqli_error($link));
+	mysqli_close($link);
  ?>
 <div class="col-lg-10 col-md-10 main-content order-main orderssup">
 	<h1 class="u-fl">&Oacute;rdenes</h1>
@@ -27,21 +33,23 @@
 				</tr>
 			</thead>
 			<tbody>
-			<?php $num = rand(1000, 8000); ?>
-			<?php for($i=1;$i<=4;$i++): ?>
+			<?php $i = 0; while($row = mysqli_fetch_array($result)): $i++; extract($row); ?>
 				<tr>
 					<td><?= $i; ?></td>
-					<td><?= $num+$i ?></td>
+					<td><?= $id ?></td>
 					<td><span class="status true"></span></td>
-					<td><a href="#">HEB</a></td>
-					<td>17/Ene/2016</td>
-					<td>200</td>
-					<td>$2,300.00</td>
+					<td><a href="#">Walmart</a></td>
+					<td><?= $created ?></td>
+					<td><?= $article_count ?></td>
+					<td>$<?= number_format($subtotal,2) ?></td>
 					<td>
-						<a href="ordendetalle.php" class="view-more btn bg-hlblue">Ver detalles</a>
+						<form action="ordendetalle.php">
+							<input type="hidden" name="orderid" value="<?= $id ?>">
+							<a href="#" class="view-more btn bg-hlblue">Ver detalles</a>
+						</form>
 					</td>
 				</tr>
-			<?php endfor; ?>
+			<?php endwhile; ?>
 			</tbody>
 		</table>
 
@@ -66,7 +74,7 @@
 			</thead>
 			<tbody>
 			<?php $num = rand(1000, 8000); ?>
-			<?php for($i=1;$i<=4;$i++): ?>
+			<?php for($i=5;$i<=4;$i++): ?>
 				<tr>
 					<td><?= $i; ?></td>
 					<td><?= $num+$i ?></td>
@@ -103,7 +111,7 @@
 				</tr>
 			</thead>
 			<tbody>
-			<?php for($i=1;$i<=10;$i++): ?>
+			<?php for($i=11;$i<=10;$i++): ?>
 				<tr>
 					<td><?= $i; ?></td>
 					<td><?= rand(2000,8000) ?></td>
@@ -121,4 +129,13 @@
 		</table>
 	</div>
 </div>
+<?php $Block->start('bottomScripts'); ?>
+<script>
+	$(function(){
+		$('.view-more.btn').click(function(){
+			$(this).parent().submit();
+		});
+	});
+</script>
+<?php $Block->end(); ?>
 <?php get_footer(); ?>

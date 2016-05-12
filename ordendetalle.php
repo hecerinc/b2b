@@ -1,17 +1,29 @@
+<?php
+if(empty($_GET))
+	die("No get");
+?>
 <?php include 'includes.php'; $tabs[4] = true; $proveedor = true; get_header(); ?>
+<?php
+	$orderid = $_GET['orderid'];
+	require_once 'conex.php';
+	$link = Conectarse();
+	$query = "SELECT * FROM orders WHERE orders.id = $orderid";
+	$result = mysqli_query($link, $query) or die(mysqli_error($link));
+	$result = mysqli_fetch_array($result);
+?>
 <div class="col-lg-10 col-md-10 main-content order-main orderdetail">
 	<h1 class="u-fl">&Oacute;rdenes</h1>
 	<p class="u-fr username">H&eacute;ctor Rinc&oacute;n</p>
 	<div class="clear h40px"></div>
-	<h2>Orden <span class="ltext">#8234</span></h2>
+	<h2>Orden <span class="ltext">#<?= $result['id'] ?></span></h2>
 	<div class="clear h30px"></div>
 	<div class="row">
 		<div class="information col-md-4">
 			<ul>
-				<li><strong>Orden #:</strong> 8234</li>
-				<li><strong>Cliente:</strong> <a href="#">HEB</a></li>
-				<li><strong>Art&iacute;culos:</strong> 200</li>
-				<li><strong>Fecha creaci&oacute;n:</strong> 28/Ene/2016</li>
+				<li><strong>Orden #:</strong> <?= $result['id'] ?></li>
+				<li><strong>Cliente:</strong> <a href="#">Walmart</a></li>
+				<li><strong>Art&iacute;culos:</strong> <?= $result['article_count'] ?></li>
+				<li><strong>Fecha creaci&oacute;n:</strong> <?= $result['created'] ?></li>
 			</ul>
 		</div>
 		<div class="col-md-4">
@@ -49,25 +61,31 @@
 				</tr>
 			</thead>
 			<tbody>
-			<?php for($i=1;$i<=10;$i++): ?>
+			<?php
+				$query = "SELECT sales.quantity, sales.total, products.name, products.sku, products.price FROM `sales` JOIN products ON sales.product_id = products.id WHERE ";
+				$result = mysqli_query($link, $query) or die(mysqli_error($link));
+
+			?>
+			<?php $i = 0; while($row = mysqli_fetch_array($result)): $i++; extract($row); ?>
 				<tr>
 					<td><?= $i; ?></td>
-					<td>17FA</td>
-					<td>Aceite Nutrioli 1L</td>
-					<td>10</td>
-					<td>$17.00</td>
-					<td>$170.00</td>
+					<td><?= $sku ?></td>
+					<td><?= $name ?></td>
+					<td><?= $quantity ?></td>
+					<td>$<?= number_format($price, 2)  ?></td>
+					<td>$<?= number_format($total, 2) ?></td>
 					<!-- <td>
 						<a href="#" class="view-more btn bg-hlblue">Ver detalles</a>
 					</td> -->
 				</tr>
-			<?php endfor; ?>
+			<?php endwhile; ?>
 			</tbody>
 		</table>
 	</div>
 
 
 </div>
+<?php mysqli_close($link); ?>
 <div class="clear h20px"></div>
 <?php $Block->start('bottomScripts'); ?>
 <link rel="stylesheet" href="css/selectize.css">
