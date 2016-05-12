@@ -46,7 +46,8 @@ $colors: (
 	hlblue: $hlblue,
 	dkblue: $dkblue,
 	ltext: $ltext,
-	teal: $teal
+	teal: $teal,
+	red: #F94363
 );
 // img{max-width: 100%;}
 .valign{@include valign;}

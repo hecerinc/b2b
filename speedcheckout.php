@@ -1,4 +1,10 @@
 <?php include 'includes.php'; $tabs[1] = true; get_header(); ?>
+<?php
+	require_once 'conex.php';
+	$link = Conectarse();
+	$query = "SELECT products.id, products.name AS prodname, products.sku, products.picture_url, products.price, suppliers.name AS provname FROM `products` JOIN suppliers ON products.supplier_id = suppliers.id";
+	$result = mysqli_query($link, $query) or die(mysqli_error($link));
+?>
 <div class="col-lg-10 col-md-10 main-content speed-checkout">
 	<h1 class="u-fl">Speed checkout</h1>
 	<p class="u-fr username">H&eacute;ctor Rinc&oacute;n</p>
@@ -23,50 +29,27 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php for($i = 1; $i<=0;$i++): ?>
-			<tr>
-				<td><?= $i ?></td>
-				<td>17FA</td>
-				<td>Ragasa</td>
-				<td>Nutrioli aceite vegetal 1L</td>
-				<td>400</td>
-				<td>$50.00</td>
-				<td class="actions">
-					<a href="#" class="delete"><i class="fa fa-times"></i></a>
-				</td>
-			</tr>
-			<?php endfor; ?>
+
 		</tbody>
 	</table>
 	<div class="clear h80px"></div>
 	<a href="carrito.php" class="finalize btn bg-teal"><i class="fa fa-check"></i> Finalizar</a>
 	<div class="clear h80px"></div>
 </div>
+<?php mysqli_close($link); ?>
 <?php $Block->start('bottomScripts'); ?>
 <script>
 	var intable = 0;
 	var products = [
+	<?php while($row = mysqli_fetch_array($result)): extract($row); ?>
 		{
-			id: 1,
-			sku: '17FA',
-			proveedor: 'Ragasa',
-			name: 'Nutrioli aceite vegetal 1L',
-			price: 50.00
+			id: <?= $id ?>,
+			sku: '<?= $sku ?>',
+			proveedor: '<?= $provname ?>',
+			name: '<?= $prodname ?>',
+			price: <?= number_format($price, 2) ?>
 		},
-		{
-			id: 2,
-			sku: 'F852',
-			proveedor: 'Ragasa',
-			name: 'Oli aceite vegetal',
-			price:30.00
-		},
-		{
-			id: 3,
-			sku: 'AB10',
-			proveedor: 'GRUMA',
-			name: 'Tortillas maíz 1kg',
-			price: 10.00
-		}
+	<?php endwhile; ?>
 	];
 	function generateRow(product, quant){
 		intable++;

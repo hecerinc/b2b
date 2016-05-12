@@ -20,9 +20,10 @@
 
 			<select name="transportes" id="transportes" class="transportes">
 				<option value="">-- Elija tipo de transportaci&oacute;n --</option>
-				<option value="1">Trailer</option>
-				<option value="2">Torton</option>
-				<option value="3">Camioneta</option>
+
+				<option value="3">Trailer</option>
+				<option value="1">Torton</option>
+				<option value="2">Camioneta</option>
 			</select>
 		</div>
 		<div class="col-md-4">

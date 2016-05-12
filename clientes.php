@@ -1,4 +1,10 @@
 <?php include 'includes.php'; $tabs[1] = true; $proveedor = true; get_header(); ?>
+<?php
+	require_once 'conex.php';
+	$link = Conectarse();
+	$query = "SELECT * FROM clients;";
+	$result = mysqli_query($link, $query) or die(mysqli_error($link));
+?>
 <div class="col-lg-10 col-md-10 main-content products-main clientes">
 	<h1 class="u-fl">Clientes</h1>
 	<p class="u-fr username">H&eacute;ctor Rinc&oacute;n</p>
@@ -6,10 +12,11 @@
 
 	<div class="clear h10px"></div>
 	<div class="products row">
+		<?php while($row = mysqli_fetch_array($result)): extract($row); ?>
 		<div class="col-md-3">
 			<div class="product">
 				<div href="#" class="img">
-					<img class="img-responsive" src="img/heblogo.png" alt="Title of product">
+					<img class="img-responsive" src="<?= $logo_url ?>" alt="<?= $name ?>">
 					<div class="overlay">
 						<a href="#" class="btn bg-hlblue add-to-cart">
 							<i class="fa fa-info"></i>
@@ -19,44 +26,11 @@
 				</div>
 				<hr>
 				<div class="links">
-					<a href="#" class="hlblue brand">H-E-B</a>
+					<a href="#" class="hlblue brand"><?= $name ?></a>
 				</div>
 			</div>
 		</div>
-		<div class="col-md-3">
-			<div class="product">
-				<div href="#" class="img">
-					<img class="img-responsive" src="img/walmart.png" alt="Title of product">
-					<div class="overlay">
-						<a href="#" class="btn bg-hlblue add-to-cart">
-							<i class="fa fa-info"></i>
-							Ver detalles
-						</a>
-					</div>
-				</div>
-				<hr>
-				<div class="links">
-					<a href="#" class="hlblue brand">Walmart</a>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-3">
-			<div class="product carrefour">
-				<div href="#" class="img">
-					<img class="img-responsive" src="img/carrefour.png" alt="Title of product">
-					<div class="overlay">
-						<a href="#" class="btn bg-hlblue add-to-cart">
-							<i class="fa fa-info"></i>
-							Ver detalles
-						</a>
-					</div>
-				</div>
-				<hr>
-				<div class="links">
-					<a href="#" class="hlblue brand">Carrefour</a>
-				</div>
-			</div>
-		</div>
+		<?php endwhile; ?>
 		<div class="clear h40px"></div>
 		<div class="pag hidden">
 			<ul class="clearfix" role="pagination">
@@ -72,6 +46,7 @@
 	</div>
 	<div class="clear h80px"></div>
 </div>
+<?php mysqli_close($link); ?>
 <?php $Block->start('bottomScripts'); ?>
 <script>
 	$(function(){
